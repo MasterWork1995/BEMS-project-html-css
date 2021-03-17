@@ -1,0 +1,1 @@
+{"version":3,"sources":["js/slider.js"],"names":["$","slick","arrows","dots"],"mappings":";AAAAA,EAAE,kCAAkCC,MAAM,CACtCC,QAAQ,EACRC,MAAM","file":"slider.cbab19bb.js","sourceRoot":"..\\src","sourcesContent":["$('.customer-reviews--slide-block').slick({\r\n    arrows: false,\r\n    dots: true\r\n\r\n});"]}
