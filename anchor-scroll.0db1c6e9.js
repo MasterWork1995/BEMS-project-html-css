@@ -117,10 +117,31 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/slider.js":[function(require,module,exports) {
-$('.customer-reviews--slide-block').slick({
-  arrows: true,
-  dots: true
+})({"js/anchor-scroll.js":[function(require,module,exports) {
+$(document).ready(function () {
+  // Add smooth scrolling to all links
+  $("a").on('click', function (event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault(); // Store hash
+
+      var hash = this.hash; // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function () {
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    }
+
+    var mobileMenuRef = document.querySelector("[data-menu]");
+    mobileMenuRef.classList.toggle("is-open", false);
+    var bodyElement = document.body;
+    bodyElement.classList.toggle("menu-open", false);
+  });
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -150,7 +171,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52579" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52488" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -326,5 +347,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/slider.js"], null)
-//# sourceMappingURL=/slider.d16eec5e.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/anchor-scroll.js"], null)
+//# sourceMappingURL=/anchor-scroll.0db1c6e9.js.map

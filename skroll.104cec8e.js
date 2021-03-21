@@ -117,10 +117,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/slider.js":[function(require,module,exports) {
-$('.customer-reviews--slide-block').slick({
-  arrows: true,
-  dots: true
+})({"js/skroll.js":[function(require,module,exports) {
+var $page = $('html, body');
+$('a[href*="#"]').click(function () {
+  $page.animate({
+    scrollTop: $($.attr(this, 'href')).offset().top
+  }, 400);
+  return false;
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -326,5 +329,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/slider.js"], null)
-//# sourceMappingURL=/slider.d16eec5e.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/skroll.js"], null)
+//# sourceMappingURL=/skroll.104cec8e.js.map
